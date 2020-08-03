@@ -36,4 +36,13 @@ module Checks
     end
     error_message
   end
+
+  def check_semantics(file)
+    error_message = ''
+
+    semantics = ['<header>', '</header>', '<main>', '</main>' '<footer>', '</footer>']
+    files_string = file.gsub(/\n|t/, '')
+    semantics.any? { |tag| error_message << 'poor semantics' unless file_string.match(tag) }
+    error_message
+  end
 end
