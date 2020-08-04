@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 #:nodoc:
 module ChecksModule
-  def check_doctype(file)
-    'check Doctype' unless file.include? '<!DOCTYPE html>'
-  end
+  def check_html_semantics(file)
+    error_message = ''.dup
 
-  def check_lang(file)
-    'add language tag' unless file.include?(/<html lang= \"en\">/)
+    semantics = ['<header>', '</header>', '<main>', '</main>', '<footer>', '</footer>']
+    files_string = file.gsub(/\n|\t/, ''.dup)
+    semantics.any? { |tag| error_message << 'poor semantics'.dup unless files_string.match(tag) }
+    error_message
   end
 
   def check_alt_attribute(file)
@@ -44,15 +47,6 @@ module ChecksModule
     structure = ['<html lang=\"en\">', '</html>', '<head>', '</head>', '<body>', '</body>']
     file_string = file.gsub(/\n|t/, ''.dup)
     structure.any? { |tag| error_message << "poor structure check your #{tag} tag" unless file_string.match(tag) }
-    error_message
-  end
-
-  def check_html_semantics(file)
-    error_message = ''.dup
-
-    semantics = ['<header>', '</header>', '<main>', '</main>', '<footer>', '</footer>']
-    files_string = file.gsub(/\n|\t/, ''.dup)
-    semantics.any? { |tag| error_message << 'poor semantics'.dup unless files_string.match(tag) }
     error_message
   end
 end

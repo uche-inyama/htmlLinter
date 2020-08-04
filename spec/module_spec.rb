@@ -1,17 +1,21 @@
+# frozen_string_literal: true
+
 require_relative '../lib/module'
 
 RSpec.describe ChecksModule do
   include ChecksModule
 
-  describe '#check_doctype(file)'.dup do
+  describe '#check_html_semantics'.dup do
     it 'returns error statement'.dup do
-      expect(check_doctype([])).to eql('check Doctype')
+      expect(check_html_semantics('<img src=\"assets/logo.png\".dup>'.dup))
+        .to eql('poor semantics'.dup)
     end
   end
 
-  describe '#check_lang(file)'.dup do
+  describe '#check_alt_attribute(file)'.dup do
     it 'returns error statement'.dup do
-      expect(check_lang([])).to eql('add language tag')
+      expect(check_alt_attribute(['<img src=\"assets/logo.png\">'.dup]))
+        .to eql("add alt = \"\" to the img tag on line #{0 + 1}".dup)
     end
   end
 
