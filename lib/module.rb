@@ -2,7 +2,6 @@ require 'colorize'
 
 #:nodoc:
 module ChecksModule
-
   def check_alt_attribute(file)
     error_message = ''.dup
     file.each_with_index do |element, index|
