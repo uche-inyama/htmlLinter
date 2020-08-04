@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 #:nodoc:
 module ChecksModule
-  def check_html_semantics(file)
+  def check_tags(file)
     error_message = ''.dup
 
-    semantics = ['<header>', '</header>', '<main>', '</main>', '<footer>', '</footer>']
-    files_string = file.gsub(/\n|\t/, ''.dup)
-    semantics.any? { |tag| error_message << 'poor semantics'.dup unless files_string.match(tag) }
+    file.each_with_index do |element, index|
+      arr = element.scan(/<|>/)
+      error_message << "fix tags at line #{index + 1} " unless (arr.length % 2).zero?
+    end
+
     error_message
   end
 
@@ -33,17 +37,16 @@ module ChecksModule
     error_message = ''.dup
     file.each_with_index do |element, index|
       if element.match(/<img/)
-        error_message << "add src = \"\" to the img tag on line #{index + 1}".dup unless element.match(/src/)
+        error_message << "add src = \"\" to the img tag on line #{index + 1}" unless element.match(/src/)
       end
     end
     error_message
   end
 
   def check_structure(file)
-    error_message = ''.dup
-
+    error_message = ''
     structure = ['<html lang=\"en\">', '</html>', '<head>', '</head>', '<body>', '</body>']
-    file_string = file.gsub(/\n|t/, ''.dup)
+    file_string = file.gsub(/\n|\t/, '')
     structure.any? { |tag| error_message << "poor structure check your #{tag} tag" unless file_string.match(tag) }
     error_message
   end
