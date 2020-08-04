@@ -1,7 +1,7 @@
-require_relative '../lib/helper.rb'
+require_relative '../lib/module.rb'
 
 class Linter
-  include ChecksHelper
+  include ChecksModule
 
   attr_accessor :file, :file_content
 
@@ -15,7 +15,7 @@ class Linter
     puts check_doctype(@file)
     puts check_lang(@file)
     puts check_href(@file)
-    # puts check_src(@file)
+    puts check_src(@file)
     puts check_structure(@file_content)
     puts check_semantics(@file_content)
   end

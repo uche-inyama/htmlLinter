@@ -1,4 +1,4 @@
-module ChecksHelper
+module ChecksModule
 
   def check_doctype(file)
     'check Doctype' unless file.include? '<!Doctype html>'    
