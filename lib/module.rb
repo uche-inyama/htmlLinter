@@ -50,7 +50,7 @@ module ChecksModule
   def check_Html_semantics(file)
     error_message = ''
 
-    semantics = ['<header>', '</header>', '<main>', '</main>' '<footer>', '</footer>']
+    semantics = ['<header>', '</header>', '<main>', '</main>', '<footer>', '</footer>']
     files_string = file.gsub(/\n|\t/, '')
     semantics.any? { |tag| error_message << 'poor semantics' unless files_string.match(tag) }
     error_message
