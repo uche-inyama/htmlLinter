@@ -2,8 +2,9 @@
 
 require_relative '../lib/module.rb'
 
+#:nodoc:
 class Linter
-  new_module = ChecksModule::HtmlChecks.new
+  include ChecksModule
 
   attr_accessor :file, :file_content
 
@@ -13,13 +14,13 @@ class Linter
   end
 
   def run_all_checks
-    puts new_module.check_doctype(@file)
-    puts new_module.check_lang(@file)
-    puts new_module.check_alt_attribute(@file)
-    puts new_module.check_href_attribute(@file)
-    puts new_module.check_src_attribute(@file)
-    puts new_module.check_structure(@file_content)
-    puts new_module.check_Html_semantics(@file_content)
+    puts new_modulecheck_doctype(@file)
+    puts check_lang(@file)
+    puts check_alt_attribute(@file)
+    puts check_href_attribute(@file)
+    puts check_src_attribute(@file)
+    puts check_structure(@file_content)
+    puts check_html_semantics(@file_content)
   end
 end
 
