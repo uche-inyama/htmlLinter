@@ -42,7 +42,7 @@ module ChecksModule
     error_message = ''
 
     structure = ['<html lang=\"en\">', '</html>', '<head>', '</head>', '<body>', '</body>']
-    file_string = file.gsub(/\n|\t/, '')
+    file_string = file.gsub(/\n|t/, '')
     structure.any? { |tag| error_message << "poor structure check your #{tag} tag" unless file_string.match(tag) }
     error_message
   end
