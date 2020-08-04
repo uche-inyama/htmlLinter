@@ -7,7 +7,7 @@ module ChecksModule
     error_message = ''.dup
     file.each_with_index do |element, index|
       if element.match(/<img/)
-        error_message << "add alt = \"\" to the img tag on line #{index + 1}" unless element.match(/alt/)
+        error_message << "add alt = \"\" to the img tag on line #{index + 1} \n" unless element.match(/alt/)
       end
     end
     error_message
@@ -17,7 +17,7 @@ module ChecksModule
     error_message = ''.dup
     file.each_with_index do |element, index|
       if element.match(/<a/)
-        error_message << "add href = \"\" to the a tag on line #{index + 1}" unless element.match(/href/)
+        error_message << "add href = \"\" to the a tag on line #{index + 1} \n" unless element.match(/href/)
       end
     end
     error_message
@@ -27,7 +27,7 @@ module ChecksModule
     error_message = ''.dup
     file.each_with_index do |element, index|
       if element.match(/<img/)
-        error_message << "add src = \"\" to the img tag on line #{index + 1}" unless element.match(/src/)
+        error_message << "add src = \"\" to the img tag on line #{index + 1} \n" unless element.match(/src/)
       end
     end
     error_message

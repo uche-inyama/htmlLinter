@@ -14,8 +14,8 @@ class Linter
 
   def checks
     puts check_alt_attribute(@file)
-    puts check_href_attribute(@file)
     puts check_src_attribute(@file)
+    puts check_href_attribute(@file)
   end
 end
 
