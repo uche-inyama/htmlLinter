@@ -11,13 +11,13 @@ class Linter
   end
 
   def run_all_checks
-    puts check_alt(@file)
     puts check_doctype(@file)
     puts check_lang(@file)
-    puts check_href(@file)
-    puts check_src(@file)
+    puts check_alt_attribute(@file)
+    puts check_href_attribute(@file)
+    puts check_src_attribute(@file)
     puts check_structure(@file_content)
-    puts check_semantics(@file_content)
+    puts check_Html_semantics(@file_content)
   end
 end
 

@@ -1,14 +1,14 @@
 module ChecksModule
 
   def check_doctype(file)
-    'check Doctype' unless file.include? '<!Doctype html>'    
+    'check Doctype' unless file.include? '<!DOCTYPE html>'    
   end
 
   def check_lang(file)
     'add language tag' unless file.include?(/<html lang= \"en\">/)
   end
 
-  def check_alt(file)
+  def check_alt_attribute(file)
     error_message = ''
     file.each_with_index do |element, index|
       if element.match(/<img/)
@@ -18,7 +18,7 @@ module ChecksModule
     error_message
   end
 
-  def check_href(file)
+  def check_href_attribute(file)
     error_message = ''
     file.each_with_index do |element, index|
       if element.match(/<a/)
@@ -28,7 +28,7 @@ module ChecksModule
     error_message
   end
 
-  def check_src(file)
+  def check_src_attribute(file)
     error_message = ''
     file.each_with_index do |element, index|
       if element.match(/<img/)
@@ -47,11 +47,11 @@ module ChecksModule
     error_message
   end
 
-  def check_semantics(file)
+  def check_Html_semantics(file)
     error_message = ''
 
     semantics = ['<header>', '</header>', '<main>', '</main>' '<footer>', '</footer>']
-    files_string = file.gsub(/\n|t/, '')
+    files_string = file.gsub(/\n|\t/, '')
     semantics.any? { |tag| error_message << 'poor semantics' unless files_string.match(tag) }
     error_message
   end
