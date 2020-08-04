@@ -53,9 +53,9 @@ The first **```image tag```** and the **```a tag```** above :point_up_2:  do not
 and the first **```meta tag```** was not properly written.
 
 
-## Live Demo
+## Video Presentation
 
-[Live Link](https://uche-inyama.github.io/NewsWeek/)
+[Live Link](https://www.loom.com/share/ce324b43f72c402eae67b598f00f43f6)
 
 ## Author
 
