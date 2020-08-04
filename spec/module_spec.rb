@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/module'
 
 RSpec.describe ChecksModule do
@@ -31,9 +33,9 @@ RSpec.describe ChecksModule do
     it 'returns error statement' do
       expect(check_href_attribute(['<a >'])).to eql("add href = \"\" to the a tag on line #{0 + 1}")
     end
-  end  
+  end
 
-  describe '#check_structure(file)'do
+  describe '#check_structure(file)' do
     it 'returns error statement' do
       expect(check_structure(File.read('index.html'))).to eql('poor structure check your <html lang=\"en\"> tag')
     end
