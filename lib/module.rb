@@ -1,17 +1,7 @@
-# frozen_string_literal: true
+require 'colorize'
 
 #:nodoc:
 module ChecksModule
-  def check_tags(file)
-    error_message = ''.dup
-
-    file.each_with_index do |element, index|
-      arr = element.scan(/<|>/)
-      error_message << "fix tags at line #{index + 1} " unless (arr.length % 2).zero?
-    end
-
-    error_message
-  end
 
   def check_alt_attribute(file)
     error_message = ''.dup
@@ -40,14 +30,6 @@ module ChecksModule
         error_message << "add src = \"\" to the img tag on line #{index + 1}" unless element.match(/src/)
       end
     end
-    error_message
-  end
-
-  def check_structure(file)
-    error_message = ''
-    structure = ['<html lang=\"en\">', '</html>', '<head>', '</head>', '<body>', '</body>']
-    file_string = file.gsub(/\n|\t/, '')
-    structure.any? { |tag| error_message << "poor structure check your #{tag} tag" unless file_string.match(tag) }
     error_message
   end
 end

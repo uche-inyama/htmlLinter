@@ -3,12 +3,6 @@ require_relative '../lib/module'
 RSpec.describe ChecksModule do
   include ChecksModule
 
-  describe '#check_tags(file)' do
-    it 'returns error statement' do
-      expect(check_tags(['<titlemint.com/sign_up</title>']))
-        .to eql("fix tags at line #{0 + 1} ")
-    end
-  end
 
   describe '#check_alt_attribute(file)' do
     it 'returns error statement' do

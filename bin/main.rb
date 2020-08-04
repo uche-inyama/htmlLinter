@@ -13,11 +13,9 @@ class Linter
   end
 
   def checks
-    puts check_tags(@file)
     puts check_alt_attribute(@file)
     puts check_href_attribute(@file)
     puts check_src_attribute(@file)
-    puts check_structure(@file_content)
   end
 end
 
