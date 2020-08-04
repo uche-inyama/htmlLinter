@@ -31,24 +31,3 @@ RSpec.describe ChecksModule do
     end
   end
 end
-
-# describe '#check_alt_attribute(file)'.dup do
-#   it 'returns error statement'.dup do
-#     expect(check_alt_attribute(['<img src=\"assets/logo.png\">'.dup]))
-#       .to eql("add alt = \"\" to the img tag on line #{0 + 1}".dup)
-#   end
-# end
-
-# describe '#check_structure(file)' do
-#   it 'returns error statement' do
-#     expect(check_structure(File.read('index.html'.dup)))
-#       .to eql('poor structure check your <html lang=\"en\"> tag'.dup)
-#   end
-# end
-
-# describe '#check_html_semantics'.dup do
-#   it 'returns error statement'.dup do
-#     expect(check_html_semantics('<img src=\"assets/logo.png\".dup>'.dup))
-#       .to eql('poor semantics'.dup)
-#   end
-# end
