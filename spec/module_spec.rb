@@ -23,4 +23,10 @@ RSpec.describe ChecksModule do
         .to eql("add href = \"\" to the a tag on line #{0 + 1} \n")
     end
   end
+
+  describe '#check_tags(file)' do
+    it 'returns error statement' do
+      expect(check_tags(['<titlemint.com/sign_up</title>'])).to eql("fix tags at line #{0 + 1} ")
+    end
+  end
 end

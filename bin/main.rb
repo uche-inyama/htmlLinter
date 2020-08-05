@@ -16,6 +16,7 @@ class Linter
     puts check_alt_attribute(@file)
     puts check_src_attribute(@file)
     puts check_href_attribute(@file)
+    puts check_tags(@file)
   end
 end
 
