@@ -29,4 +29,11 @@ RSpec.describe ChecksModule do
       expect(check_tags(['<titlemint.com/sign_up</title>'])).to eql("fix tags at line #{0 + 1} ")
     end
   end
+
+  describe '#check_href_attribute(file)' do
+    it 'returns error statement' do
+      expect(check_href_attribute(['<a >']))
+        .to eql("add href = \"\" to the a tag on line #{0 + 1} \n")
+    end
+  end
 end
