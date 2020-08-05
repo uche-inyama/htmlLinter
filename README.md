@@ -5,12 +5,11 @@
 > 
 >  This project is a Linter, a simple solution to validate HTML files. It flags off the following as errors :
 >
-
-1.  absence of HTML semantics.
-2.  the absence of an alt attribute in an image tag
-3.  the absence of href attribute in **```a tag```**
-4.  the absence of src attribute in an image tag.
-5.  if the structure HTML file is incomplete.
+ 
+1.  the absence of an alt attribute in an image tag
+2.  the absence of href attribute in **```a tag```**
+3.  the absence of src attribute in an image tag.
+4.  checks that the tags are properly written.
 
 ## Built With
 
