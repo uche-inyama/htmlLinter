@@ -9,7 +9,7 @@ module ChecksModule
         error_message << "add alt = \"\" to the img tag on line #{index + 1} \n" unless element.match(/alt/)
       end
     end
-    error_message.empty? ? "test case passed for all the alt attribute" : error_message
+    error_message.empty? ? 'test case passed for all the alt attribute' : error_message
   end
 
   def check_href_attribute(file)
@@ -19,7 +19,7 @@ module ChecksModule
         error_message << "add href = \"\" to the a tag on line #{index + 1} \n" unless element.match(/href/)
       end
     end
-    error_message.empty? ? "test case passed for all the href attribute" : error_message
+    error_message.empty? ? 'test case passed for all the href attribute' : error_message
   end
 
   def check_src_attribute(file)
@@ -29,7 +29,7 @@ module ChecksModule
         error_message << "add src = \"\" to the img tag on line #{index + 1} \n" unless element.match(/src/)
       end
     end
-    error_message.empty? ? "test case passed for all the src attribute" : error_message
+    error_message.empty? ? 'test case passed for all the src attribute' : error_message
   end
 
   def check_tags(file)
@@ -40,6 +40,6 @@ module ChecksModule
       error_message << "fix tags at line #{index + 1} \n" unless (arr.length % 2).zero?
     end
 
-    error_message.empty? ? "test case passed for tags" : error_message
+    error_message.empty? ? 'test case passed for tags' : error_message
   end
 end
