@@ -40,6 +40,6 @@ module ChecksModule
       error_message << "fix tags at line #{index + 1} \n" unless (arr.length % 2).zero?
     end
 
-    error_message.empty? ? 'test case passed for tags' : error_message
+    error_message.empty? ? 'test case passed for checking tags' : error_message
   end
 end
