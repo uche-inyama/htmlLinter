@@ -38,7 +38,7 @@ On your terminal:
 ## GOOD HTML CODE
 ![Screenshot from 2020-08-04 17-23-34](https://user-images.githubusercontent.com/46329537/89336114-cbbcbc80-d690-11ea-8d8a-75f9cc2b8b98.png)
 
-![goodTerminal](https://user-images.githubusercontent.com/46329537/89336373-340b9e00-d691-11ea-8dc6-ff21e314df02.png)
+![good](https://user-images.githubusercontent.com/46329537/89374760-31866400-d6e4-11ea-88d1-87648caaa985.png)
 
 The **```image tag```** and the **```a tag```** above :point_up_2:  have all their attributes.
 
