@@ -34,3 +34,19 @@ jobs:
           [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ror/.stylelintrc.json
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
+
+
+
+#         describe '#check_structure(file)' do
+#   it 'returns error statement' do
+#     expect(check_structure(File.read('index.html'.dup)))
+#       .to eql('poor structure check your <html lang=\"en\"> tag'.dup)
+#   end
+# end
+
+# describe '#check_html_semantics'.dup do
+#   it 'returns error statement'.dup do
+#     expect(check_html_semantics('<img src=\"assets/logo.png\".dup>'.dup))
+#       .to eql('poor semantics'.dup)
+#   end
+# end
